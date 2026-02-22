@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Booster</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">⚡</div>
+                <div>
+                    <h1>Game Booster</h1>
+                    <span class="device-model" id="deviceModel">Loading...</span>
+                </div>
+            </div>
+            <button class="menu-btn" id="menuBtn">⚙️</button>
+        </div>
+        
+        <!-- RAM Status Card -->
+        <div class="ram-card">
+            <div class="ram-header">
+                <span class="ram-title">🧠 RAM STATUS</span>
+                <span class="ram-percent" id="ramPercent">0%</span>
+            </div>
+            <div class="ram-bar">
+                <div class="ram-fill" id="ramFill" style="width: 0%"></div>
+            </div>
+            <div class="ram-details">
+                <span>Used: <strong id="ramUsed">0 B</strong></span>
+                <span>Free: <strong id="ramFree">0 B</strong></span>
+                <span>Total: <strong id="ramTotal">0 B</strong></span>
+            </div>
+        </div>
+        
+        <!-- Boost Button -->
+        <button class="boost-btn" id="cleanRamBtn">
+            <span class="btn-icon">🗑️</span>
+            <span class="btn-text">BERSIHKAN RAM</span>
+        </button>
+        
+        <!-- Log Card -->
+        <div class="log-card" id="logCard" style="display: none;">
+            <div class="log-header">
+                <span>📋 HASIL PEMBERSIHAN</span>
+                <button class="log-close" id="closeLog">✕</button>
+            </div>
+            <pre class="log-content" id="logContent"></pre>
+        </div>
+        
+        <!-- FPS Control -->
+        <div class="fps-card">
+            <div class="fps-header">
+                <span>🎯 TARGET FPS</span>
+                <span class="fps-target" id="fpsTarget">60</span>
+            </div>
+            <input type="range" class="fps-slider" id="fpsSlider" min="30" max="120" value="60" step="10">
+            <div class="fps-markers">
+                <span>30</span>
+                <span>60</span>
+                <span>90</span>
+                <span>120</span>
+            </div>
+        </div>
+        
+        <!-- Game List -->
+        <div class="game-section">
+            <div class="section-header">
+                <h3>🎮 GAME TERINSTALL</h3>
+                <span class="game-count" id="gameCount">0</span>
+            </div>
+            <div class="game-grid" id="gameGrid"></div>
+        </div>
+        
+        <!-- Recent Games -->
+        <div class="recent-section">
+            <h4>⏱️ RECENT</h4>
+            <div class="recent-list" id="recentList"></div>
+        </div>
+    </div>
+    
+    <!-- Floating Overlay -->
+    <div class="float-overlay" id="floatOverlay">
+        <div class="overlay-header" id="overlayDrag">
+            <span>📊 LIVE STATS</span>
+            <div>
+                <button class="overlay-btn" id="minimizeOverlay">−</button>
+                <button class="overlay-btn" id="closeOverlay">✕</button>
+            </div>
+        </div>
+        <div class="overlay-content">
+            <div class="overlay-row">
+                <span>RAM:</span>
+                <span id="overlayRam">0%</span>
+            </div>
+            <div class="overlay-row">
+                <span>FPS:</span>
+                <span id="overlayFps">60</span>
+            </div>
+            <div class="overlay-row">
+                <span>PROSES:</span>
+                <span id="overlayProcs">0</span>
+            </div>
+            <button class="overlay-boost" id="overlayBoost">⚡</button>
+        </div>
+    </div>
+    
+    <!-- Menu Modal -->
+    <div class="modal" id="menuModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>MENU</h3>
+                <button class="close-btn" id="closeMenu">✕</button>
+            </div>
+            <div class="modal-body">
+                <button class="menu-item" id="scanGamesBtn">🔄 Scan Games</button>
+                <button class="menu-item" id="checkPermBtn">🔓 Cek Izin</button>
+                <button class="menu-item" id="resetOverlayBtn">🪟 Reset Overlay</button>
+                <button class="menu-item" id="showProcBtn">📋 Lihat Proses</button>
+                <button class="menu-item" id="clearCacheBtn">🗑️ Clear Cache</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
