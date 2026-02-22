@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="160dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/floating_bg"
+    android:padding="8dp">
+
+    <!-- Header with close button -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="4dp">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚡ GAME BOOSTER"
+            android:textColor="#4a6cf7"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"/>
+
+        <Button
+            android:id="@+id/btnClose"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:text="✕"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:background="#4a6cf7"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"/>
+
+    </RelativeLayout>
+
+    <!-- Stats -->
+    <TextView
+        android:id="@+id/tvRam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RAM: 0 MB"
+        android:textColor="#FFFFFF"
+        android:textSize="11sp"
+        android:padding="2dp"/>
+
+    <TextView
+        android:id="@+id/tvFps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FPS: 60"
+        android:textColor="#4aff9e"
+        android:textSize="11sp"
+        android:padding="2dp"/>
+
+    <TextView
+        android:id="@+id/tvCpu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CPU: 8 Core"
+        android:textColor="#ffd166"
+        android:textSize="11sp"
+        android:padding="2dp"/>
+
+    <!-- Boost Button -->
+    <Button
+        android:id="@+id/btnBoost"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:text="BOOST RAM"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:background="#4a6cf7"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="4dp"/>
+
+</LinearLayout>
